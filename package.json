@@ -1,0 +1,31 @@
+{
+  "name": "angularjsangularhybrid",
+  "version": "1.0.0",
+  "description": "Hybrid Bootstrapped AngularJS / Angular Project",
+  "main": "index.html",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-ui-bootstrap": "^1.2.5",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "jquery": "^1.9.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "scripts": {
+    "lite": "lite-server --port 10001",
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllenConway/AngularJSAngularHybrid.git"
+  },
+  "author": "Allen Conway",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AllenConway/AngularJSAngularHybrid/issues"
+  },
+  "homepage": "https://github.com/AllenConway/AngularJSAngularHybrid#readme"
+}

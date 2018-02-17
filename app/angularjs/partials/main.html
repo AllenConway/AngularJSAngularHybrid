@@ -1,0 +1,19 @@
+﻿
+<h1>{{vm.title}}</h1>
+
+<div>
+    <uib-tabset>
+        <uib-tab ng-repeat="tab in vm.tabs" heading="{{tab.title}}" select="vm.go(tab.route)" active="tab.active"></uib-tab>
+        <!--<div ui-view="{{tab.route}}"></div>
+        </uib-tab>-->
+    </uib-tabset>
+    
+    <div ui-view></div>
+
+</div>
+
+
+
+
+
+
