@@ -6,14 +6,14 @@ var helpers = require('./helpers');
 module.exports = {
     //the entry-point files that define the bundles
     entry: {
-        pollyfills: '../pollyfills.ts', //the polyfills needed to run Angular applications in most modern browsers
-        vendor: '../vendor.ts', //the third-party dependencies such as Angular, lodash, and bootstrap.css
-        app: '../main.ts' //the application code
+        pollyfills: './app/pollyfills.ts', //the polyfills needed to run Angular applications in most modern browsers
+        vendor: './app/vendor.ts', //the third-party dependencies such as Angular, lodash, and bootstrap.css
+        app: './app/main.ts' //the application code
     },
 
     //resolve extension-less file requests by looking for matching files with .ts extension or .js
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js', '.html']
     },
 
     module: {
@@ -24,7 +24,7 @@ module.exports = {
                     {
                         // loader to transpile the Typescript code to ES5, guided by the tsconfig.json file
                         loader: 'awesome-typescript-loader',
-                        options: { configFileName: helpers.root('src', 'tsconfig.json') }
+                        options: { configFileName: 'tsconfig.json' }
                     }, 'angular2-template-loader' //loads angular components' template and styles
                 ]
             },
@@ -36,7 +36,7 @@ module.exports = {
             {
                 //pattern matches application-wide styles
                 test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
+                exclude: helpers.root('app'),
                 loader: ExtractTextPlugin.extract(
                     {
                         fallback: 'style-loader',
@@ -47,7 +47,7 @@ module.exports = {
             {
                 //pattern handles component-scoped styles (the ones specified in a component's styleUrls metadata property
                 test: /\.css$/,
-                include: helpers.root('src', 'app'),
+                include: helpers.root('app'),
                 loader: 'raw-loader'
             }
         ]
@@ -55,10 +55,16 @@ module.exports = {
 
     plugins: [
         // Workaround for angular/angular#11580
+        // new webpack.ContextReplacementPlugin(
+        //     // The (\\|\/) piece accounts for path separators in *nix and Windows
+        //     /angular(\\|\/)core(\\|\/)@angular/,
+        //     helpers.root('./'), // location of your app
+        //     {} // a map of your routes
+        // ),
         new webpack.ContextReplacementPlugin(
             // The (\\|\/) piece accounts for path separators in *nix and Windows
-            /angular(\\|\/)core(\\|\/)@angular/,
-            helpers.root('./app'), // location of your app
+            /(.+)?angular(\\|\/)core(.+)?/,
+            helpers.root('app'), // location of your app
             {} // a map of your routes
         ),
 
@@ -66,13 +72,13 @@ module.exports = {
         //Where Webpack finds that app has shared dependencies with vendor, it removes them from app.
         //It would remove polyfills from vendor if they shared dependencies, which they don't
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills']
+            name: ['app', 'vendor', 'pollyfills']
         }),
 
         //Webpack generates a number of js and CSS files. You could insert them into the index.html manually. 
         //That would be tedious and error-prone. Webpack can inject those scripts and links for you with the HtmlWebpackPlugin
         new HtmlWebpackPlugin({
-            template: '../../index.html'
+            template: 'index.html'
         })
     ]
 

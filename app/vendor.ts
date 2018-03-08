@@ -10,7 +10,7 @@ import '@angular/router';
 import 'rxjs';
 
 // jQuery
-import 'jquery';
+// import 'jquery';
 
 // Bootstrap
-import 'bootstrap';
+// import 'bootstrap';

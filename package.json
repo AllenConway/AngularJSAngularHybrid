@@ -4,6 +4,12 @@
   "description": "Hybrid Bootstrapped AngularJS / Angular Project",
   "main": "index.html",
   "dependencies": {
+    "angular": "^1.5.2",
+    "angular-ui-bootstrap": "^1.2.5",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "jquery": "^1.9.1",
+    "@angular/cli": "1.6.0",
     "@angular/common": "~5.2.6",
     "@angular/compiler": "~5.2.6",
     "@angular/core": "~5.2.6",
@@ -12,16 +18,13 @@
     "@angular/platform-browser": "~5.2.6",
     "@angular/platform-browser-dynamic": "~5.2.6",
     "@angular/router": "~5.2.6",
+    "@angular/upgrade": "5.2.6",
     "core-js": "^2.5.3",
     "rxjs": "5.5.6",
-    "zone.js": "^0.8.20",
-    "angular": "^1.5.2",
-    "angular-ui-bootstrap": "^1.2.5",
-    "angular-ui-router": "^0.2.18",
-    "bootstrap": "^3.3.6",
-    "jquery": "^1.9.1"
+    "zone.js": "^0.8.20"
   },
   "devDependencies": {
+    "@types/angular": "^1.6.43",
     "@types/node": "^9.4.6",
     "@types/requirejs": "^2.1.31",
     "angular2-template-loader": "^0.6.2",
@@ -36,7 +39,7 @@
     "typescript": "2.7.2",
     "webpack": "3.11.0",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "3.1.0",
+    "webpack-dev-server": "2.11.1",
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
