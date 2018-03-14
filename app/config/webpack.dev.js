@@ -1,3 +1,4 @@
+var webpack = require('webpack')
 var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
@@ -20,7 +21,12 @@ module.exports = webpackMerge(commonConfig, {
   //The CSS styles are buried inside the Javascript bundles by default. The ExtractTextPlugin extracts them into external .css 
   //files that the HtmlWebpackPlugin inscribes as <link> tags into the index.html
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
   ],
 
   //The development build relies on the Webpack development server

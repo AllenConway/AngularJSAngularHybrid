@@ -1,4 +1,12 @@
 .DS_STORE
+.settings
+**/.vs
+**/.vscode
+!**/.vscode/tasks.json
+
+# Ignore TypeScript transpiled files
+app/angularjs/**/*.map
+app/angularjs/**/*.js
 
 /dist/
 bazel-*

@@ -1,4 +1,6 @@
-﻿var app = angular.module("autoPerformanceApp");
+/// <reference path="../../../node_modules/@angular/upgrade/static/src/common/angular1.d.ts" />
+
+var app = angular.module("autoPerformanceApp");
 
 class carService {
 
@@ -26,7 +28,8 @@ class carService {
 
       //$timeout returns a promise, so could use this instead of $q above
       //Some longer running API call...      
-      return $timeout(function () { }, 2500);
+      //return $timeout(function () { }, 2500);
+      return window.setTimeout(() => {}, 2500)
    }
 }
 

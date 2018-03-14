@@ -1,12 +1,12 @@
-﻿var app = angular.module("autoPerformanceApp");
+var app = angular.module("autoPerformanceApp");
 
 class MainController {
 
    constructor($scope, $state) {
 
-      var vm = this;
+      var vm:any = this;  //declare as any converting to TS
 
-      vm.title = "Welcome to the Auto Performance AngularJS App";
+      vm.title = "Welcome to the Auto Performance Angular Hybrid App";      
 
       vm.tabs = [
          { title: "Engine Horsepower", route: "main.tab1", active: false },
