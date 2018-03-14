@@ -1,10 +1,10 @@
-﻿var app = angular.module("autoPerformanceApp");
+var app = angular.module("autoPerformanceApp");
 
 class EngineHorsepowerController {
 
    constructor(carService) {
 
-      var vm = this;
+      var vm:any = this; //declare as any converting to TS
       
       vm.title = "Engine Horsepower Calculation";
 
