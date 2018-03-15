@@ -1,15 +1,15 @@
-﻿<h3>{{vm.title}}</h3>
+﻿<h3>{{title}}</h3>
 
-<form ng-submit="vm.submit(calculations)">
+<form (ngSubmit)="submit(calculations)">
     <div class="form-group">
         <div class="row">
             <div class="col-xs-5">
                 <label for="vehicleWeight">Weight</label>
-                <input type="text" class="form-control" id="vehicleWeight" ng-model="calculations.weight" placeholder="Enter Vehicle Weight">
+                <input type="text" class="form-control" name="vehicleWeight" [(ngModel)]="calculations.weight" placeholder="Enter Vehicle Weight" autofocus>
             </div>
             <div class="col-xs-5">
                 <label for="estimatedTime">1/4 Mile ET</label>
-                <input type="text" class="form-control" id="estimatedTime" ng-model="calculations.et" placeholder="Enter 1/4 Time in Seconds">
+                <input type="text" class="form-control" name="estimatedTime" [(ngModel)]="calculations.et" placeholder="Enter 1/4 Time in Seconds">
             </div>
         </div>
     </div>
@@ -18,11 +18,11 @@
         <div class="row">
             <div class="col-xs-5">
                 <label for="estimatedFlywheelHorsePower">Estimated Flywheel Engine Horsepower</label>
-                <input type="text" class="form-control" id="estimatedFlywheelHorsePower" ng-model="vm.calculatedHP.flywheelHorsepower">
+                <input type="text" class="form-control" name="estimatedFlywheelHorsePower" [(ngModel)]="calculatedHP.flywheelHorsepower">
             </div>
             <div class="col-xs-5">
                 <label for="estimatedRearWheelHorsePower">Estimated Rear Wheel Engine Horsepower (15% drivetrain loss)</label>
-                <input type="text" class="form-control" id="estimatedRearWheelHorsePower" ng-model="vm.calculatedHP.rearWheelHorsepower">
+                <input type="text" class="form-control" name="estimatedRearWheelHorsePower" [(ngModel)]="calculatedHP.rearWheelHorsepower">
             </div>
         </div>
     </div>
