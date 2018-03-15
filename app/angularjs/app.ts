@@ -12,7 +12,7 @@ class StatesProvider {
     //    this.$stateProvider = $stateProvider;
     //    this.$urlRouterProvider = $urlRouterProvider;
  
-       $urlRouterProvider.otherwise("/main/tab1");
+       $urlRouterProvider.otherwise("/main/enginehorsepower");
  
        var main = {
           name: "main",
@@ -24,21 +24,20 @@ class StatesProvider {
  
        var mainTab1 = {
           name: "main.tab1",         
-          url: "/tab1",
-          templateUrl: "app/angularjs/partials/engineHorsepower.html",
-          controller: "EngineHorsepowerController as vm"
+          url: "/enginehorsepower",
+          template: "<engine-horsepower></engine-horsepower>"
        };
  
        var mainTab2 = {
           name: "main.tab2",
-          url: "/tab2",
-          templateUrl: "app/angularjs/partials/tab2.html"
+          url: "/enginedisplacement",
+          template: "<engine-displacement></engine-displacement>"
        };
  
        var mainTab3 = {
           name: "main.tab3",
-          url: "/tab3",
-          templateUrl: "app/angularjs/partials/tab3.html"
+          url: "/enginetorque",
+          template: "<engine-torque></engine-torque>"
        };
  
        $stateProvider

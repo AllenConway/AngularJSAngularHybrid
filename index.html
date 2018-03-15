@@ -1,48 +1,35 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>AngularJS/Angular Hybrid App</title>
 
 
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
     <link href="app/shared/site.css" rel="stylesheet" />
 
     <script src="node_modules/jquery/jquery.js"></script>
-    <script src="node_modules/angular/angular.js"></script>    
+    <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="app/angularjs/app.js"></script>    
+    <script src="app/angularjs/app.js"></script>
 
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 </head>
 <!-- <body ng-app="autoPerformanceApp" class="container"> -->
+
 <body class="container">
 
 
-<div ui-view></div>
+    <div ui-view></div>
 
-    <!--<div ng-controller="MainController as vm">
-    <uib-tabset>
-        <uib-tab ng-repeat="tab in vm.tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
-            <div ui-view="{{tab.route}}"></div>
-        </uib-tab>
-    </uib-tabset>
-        </div>-->
-
-        <!--<div ng-controller="HomeController as vm">
-                <uib-tabset>
-                    <uib-tab ng-repeat="tab in vm.tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
-                        <div ui-view="{{tab.route}}"></div>
-                    </uib-tab>
-                </uib-tabset>
-            </div>-->
-
-        <script src="app/angularjs/controllers/main.js"></script>
-        <script src="app/angularjs/models/HorsepowerCalculations.js"></script>
-        <script src="app/angularjs/services/carService.js"></script>
-        <script src="app/angularjs/controllers/engineHorsepower.js"></script>
+    <script src="app/angularjs/controllers/main.js"></script>
+    <!-- <script src="app/angularjs/models/HorsepowerCalculations.js"></script> -->
+    <script src="app/angularjs/services/carService.js"></script>
+    <!-- <script src="app/angularjs/controllers/engineHorsepower.js"></script> -->
 
 </body>
+
 </html>
