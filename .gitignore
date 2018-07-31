@@ -5,6 +5,8 @@
 !**/.vscode/tasks.json
 
 # Ignore TypeScript transpiled files
+app/*.map
+app/*.js
 app/angularjs/**/*.map
 app/angularjs/**/*.js
 
