@@ -2,7 +2,9 @@ import { UpgradeModule } from '@angular/upgrade/static';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { EngineDisplacementComponent, EngineHorsepowerComponent, EngineTorqueComponent } from './engine/index'
+import { EngineDisplacementComponent, EngineHorsepowerComponent, EngineTorqueComponent } from './engine/index'; //barrel usage
+import { CarService } from './shared/services/car.service';
+import { HorsepowerCalculationsService } from './shared/services/horsepower-calculations.service';
 
 @NgModule({
     imports: [
@@ -16,7 +18,9 @@ import { EngineDisplacementComponent, EngineHorsepowerComponent, EngineTorqueCom
         EngineTorqueComponent
     ],
     providers: [
-        { provide: 'carService', useFactory: ($injector: any) => $injector.get('carService'), deps: ['$injector'] },
+        CarService, //ng
+        HorsepowerCalculationsService, //ng
+        //{ provide: 'carService', useFactory: ($injector: any) => $injector.get('carService'), deps: ['$injector'] }, //ng1
     ],
     entryComponents: [
         EngineDisplacementComponent, 

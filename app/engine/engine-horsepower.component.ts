@@ -1,8 +1,11 @@
-declare var angular: angular.IAngularStatic;
+declare let angular: angular.IAngularStatic;
 
 import { Component, OnInit, Inject } from '@angular/core';
 import { downgradeComponent } from '@angular/upgrade/static';
-import { HorsepowerCalculations } from '../shared/HorsepowerCalculations';
+// import { CarService } from '../shared/services/car.service';
+// import { Car, HorsepowerCalculations } from '../shared/model'; //barrel usage
+import { HorsepowerCalculationsService } from '../shared/services/horsepower-calculations.service';
+import { CarCalculations } from '../shared/model'; //barrel usage
 
 @Component({
     selector: 'engine-horsepower',
@@ -12,63 +15,67 @@ import { HorsepowerCalculations } from '../shared/HorsepowerCalculations';
 export class EngineHorsepowerComponent implements OnInit {
 
     title: string;
-    calculations: any;
+    calculations: CarCalculations;
     cars: any = [];
     calculatedHP: any;
 
-    constructor(@Inject('carService') private carService) {
+    //constructor(@Inject('carService') private carService) { //ng1
+    //constructor(private carService: CarService) { //iteration 1: business logic still in component, but calling ng service
+    constructor(private horsepowerCaluclationsService: HorsepowerCalculationsService) {
 
         this.title = "Engine Horsepower Calculation";
 
+        //Refactored to service
         this.calculations = {
             weight: null,
             et: null 
         };
-
-        this.cars = [];
+        //this.cars = [];
 
         this.calculatedHP = {};
     }
 
     public submit = (calculations) => {
-        this.calculatedHP = this.engineHorsepower(calculations);
+        this.calculatedHP = this.horsepowerCaluclationsService.engineHorsepower(calculations);
     };
 
-    engineHorsepower = (calculations) => {
-        var hpCalc = calculations.et / 5.825;
-        var rwHorsepower = Math.round((calculations.weight / Math.pow(hpCalc, 3)));
+    // engineHorsepower = (calculations):HorsepowerCalculations => {
+    //     let hpCalc = calculations.et / 5.825;
+    //     let rwHorsepower = Math.round((calculations.weight / Math.pow(hpCalc, 3)));
 
-        //15 percent drivetrain loss on wheel and increase at flywheel (engine horsepower)
-        var flywheelHP = (rwHorsepower * 1.146);
-        var fwHorsepower = Math.round(flywheelHP);
+    //     //15 percent drivetrain loss on wheel and increase at flywheel (engine horsepower)
+    //     let flywheelHP = (rwHorsepower * 1.146);
+    //     let fwHorsepower = Math.round(flywheelHP);
 
-        return new HorsepowerCalculations(rwHorsepower, fwHorsepower);
+    //     let hpCalcs: HorsepowerCalculations = {
+    //         rearWheelHorsepower: rwHorsepower,
+    //         flywheelHorsepower: fwHorsepower
+    //     };
 
-    }
+    //     return hpCalcs;
+    // }
 
-    calculateCarData = () => {
+    // calculateCarData = () => {
 
-        //Call service that makes API call to get car data
-        var cars = this.carService.getCars();
+    //     //Call service that makes API call to get car data
+    //     let cars = this.carService.getCars();
 
-        if (typeof cars !== "undefined") {
-            //for (var car of cars) {
-            for (var i = 0, c = cars; i < c.length; i++) {
-                var car = c[i];
-                var calc = {
-                    weight: car.weight,
-                    et: car.et
-                }
+    //     if (typeof cars !== "undefined") {
+    //         //for (let car of cars) {
+    //         for (let i = 0, c = cars; i < c.length; i++) {
+    //             let car:Car = c[i];
+    //             let calc = {
+    //                 weight: car.weight,
+    //                 et: car.et
+    //             }
 
-                var hpCalcs = this.engineHorsepower(calc);
-                car.rearWheelHorsepower = hpCalcs.rearWheelHorsepower;
-                car.flywheelHorsepower = hpCalcs.flywheelHorsepower;
-            }
-        }
+    //             let hpCalcs = this.engineHorsepower(calc);
+    //             car.horsepower = hpCalcs;
+    //         }
+    //     }
 
-        return this.cars = cars;
-
-    }
+    //     return this.cars = cars;
+    // }
 
     ngOnInit() {
         console.log("EngineHorsepowerComponent initalized");
