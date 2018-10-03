@@ -1,7 +1,7 @@
-declare let angular: angular.IAngularStatic;
+//declare let angular: angular.IAngularStatic;
 
 import { Component, OnInit, Inject } from '@angular/core';
-import { downgradeComponent } from '@angular/upgrade/static';
+// import { downgradeComponent } from '@angular/upgrade/static';
 // import { CarService } from '../shared/services/car.service';
 // import { Car, HorsepowerCalculations } from '../shared/model'; //barrel usage
 import { HorsepowerCalculationsService } from '../shared/services/horsepower-calculations.service';
@@ -85,5 +85,5 @@ export class EngineHorsepowerComponent implements OnInit {
 
 //Instead of registering a component, we register a directive, a downgraded version of the Angular component.
 //The as angular.IDirectiveFactory cast tells the TypeScript compiler that the return value of the downgradeComponent method is a directive factory.
-angular.module('autoPerformanceApp')
-    .directive('engineHorsepower', downgradeComponent({ component: EngineHorsepowerComponent }));
+// angular.module('autoPerformanceApp')
+//     .directive('engineHorsepower', downgradeComponent({ component: EngineHorsepowerComponent }));

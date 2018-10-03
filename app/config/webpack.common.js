@@ -13,7 +13,7 @@ module.exports = {
 
     //resolve extension-less file requests by looking for matching files with .ts extension or .js
     resolve: {
-        extensions: ['.ts', '.js', '.html']
+        extensions: ['.ts', '.js', '.html', '.css']
     },
 
     module: {
@@ -34,7 +34,7 @@ module.exports = {
                 loader: 'html-loader'
             },
             {
-                //pattern matches application-wide styles
+                //pattern matches application-wide styles, and omits anything in the app folder (all the ng code)
                 test: /\.css$/,
                 exclude: helpers.root('app'),
                 loader: ExtractTextPlugin.extract(
@@ -45,7 +45,7 @@ module.exports = {
                 )
             },
             {
-                //pattern handles component-scoped styles (the ones specified in a component's styleUrls metadata property
+                //pattern handles component-scoped styles (the ones specified in a component's styleUrls metadata property)
                 test: /\.css$/,
                 include: helpers.root('app'),
                 loader: 'raw-loader'

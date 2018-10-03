@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    <title>AngularJS/Angular Hybrid App</title>
+    <title>Fully Converted Angular App</title>
 
-
-    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
     <link href="app/shared/site.css" rel="stylesheet" />
 
@@ -14,22 +13,22 @@
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="app/angularjs/app.js"></script>
+    <script src="app/angularjs/app.js"></script> -->
 
+    <base href="/">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <!-- <body ng-app="autoPerformanceApp" class="container"> -->
 
-<body class="container">
+<body >
+    <app-root></app-root>
+    <!-- <div ui-view></div>
 
-
-    <div ui-view></div>
-
-    <script src="app/angularjs/controllers/main.js"></script>
+    <script src="app/angularjs/controllers/main.js"></script> -->
     <!-- <script src="app/angularjs/models/HorsepowerCalculations.js"></script> -->
-    <script src="app/angularjs/services/carService.js"></script>
+    <!-- <script src="app/angularjs/services/carService.js"></script> -->
     <!-- <script src="app/angularjs/controllers/engineHorsepower.js"></script> -->
-
 </body>
 
 </html>
