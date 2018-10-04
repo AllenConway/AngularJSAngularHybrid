@@ -3,15 +3,18 @@
 <div>
     <!-- <uib-tabset>
         <uib-tab ng-repeat="tab in vm.tabs" heading="{{tab.title}}" select="vm.go(tab.route)" active="tab.active"></uib-tab> -->
-        <!--<div ui-view="{{tab.route}}"></div>
+    <!--<div ui-view="{{tab.route}}"></div>
         </uib-tab>-->
     <!-- </uib-tabset> -->
-    
+
     <!-- <div ui-view></div> -->
     <main class="container">
         <ngb-tabset>
-            <ngb-tab title="Test Tab"></ngb-tab>
-            <!-- <ngb-tab *ngFor="let tab of tabs" title="{{tab.title}}" [routerLink]="{{tab.route}}"></ngb-tab> -->
+            <ngb-tab *ngFor="let tab of tabs">
+                <ng-template ngbTabTitle>
+                    <a [routerLink]="tab.route">{{tab.title}}</a>
+                </ng-template>
+            </ngb-tab>
         </ngb-tabset>
 
         <router-outlet></router-outlet>
