@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'engine-torque',
-    templateUrl: './engine-torque.html'
+    templateUrl: './engine-torque.component.html'
 })
 
 export class EngineTorqueComponent implements OnInit {

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'engine-displacement',
-    templateUrl: './engine-displacement.html'
+    templateUrl: './engine-displacement.component.html'
 })
 
 export class EngineDisplacementComponent implements OnInit {

@@ -9,7 +9,7 @@ import { CarCalculations } from '../shared/model'; //barrel usage
 
 @Component({
     selector: 'engine-horsepower',
-    templateUrl: './engine-horsepower.html'
+    templateUrl: './engine-horsepower.component.html'
 })
 
 export class EngineHorsepowerComponent implements OnInit {
