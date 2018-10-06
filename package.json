@@ -47,6 +47,7 @@
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.20.2",
+    "typemoq": "^2.1.0",
     "typescript": "2.7.2",
     "webpack": "3.11.0",
     "webpack-cli": "^2.0.10",
