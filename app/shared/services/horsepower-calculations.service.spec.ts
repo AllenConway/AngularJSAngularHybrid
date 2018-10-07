@@ -3,7 +3,7 @@ import { HorsepowerCalculationsService } from './horsepower-calculations.service
 import { Car } from '../model';
 import * as TypeMoq from "typemoq";
 
-describe("Engine Calculations TypeScript Tests Using TypeMoq", () => {
+describe("Horsepower Service Calculations TypeScript Tests Using TypeMoq", () => {
 
     it("should return mocked calculated car data metrics", () => {
 

@@ -17,6 +17,9 @@ node_modules
 bower_components
 tools/gulp-tasks/cldr/cldr-data/
 
+# Ignore coverage from unit testing
+coverage
+
 # Include when developing application packages.
 pubspec.lock
 .c9
