@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { routedComponents, AppRoutingModule } from './app-routing.module';
 
-//import { EngineDisplacementComponent, EngineHorsepowerComponent, EngineTorqueComponent } from './engine/index'; //barrel usage
+import { EngineDisplacementComponent, EngineHorsepowerComponent, EngineTorqueComponent } from './engine/index'; //barrel usage
 import { CarService } from './shared/services/car.service';
 import { HorsepowerCalculationsService } from './shared/services/horsepower-calculations.service';
 
@@ -22,10 +22,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ],
     declarations: [
         AppComponent,
-        routedComponents
-        // EngineDisplacementComponent,
-        // EngineHorsepowerComponent,
-        // EngineTorqueComponent
+        routedComponents,
+        EngineDisplacementComponent,
+        EngineHorsepowerComponent,
+        EngineTorqueComponent
     ],
     providers: [
         CarService, //ng
