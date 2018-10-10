@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
     constructor() {
 
-        this.title = "Welcome to the Auto Performance Angular Hybrid App";
+        this.title = "Welcome to the Auto Performance Angular App";
 
         this.tabs = [
             { title: "Engine Horsepower", route: "enginehorsepower", active: false },
