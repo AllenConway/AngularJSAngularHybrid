@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HorsepowerCalculations } from '../model';
-import { Car } from '../model';
-import { CarCalculations } from '../model/CarCalculations';
+import { Car, HorsepowerCalculations } from '../model';
 
 @Injectable()
 export class CarService {
