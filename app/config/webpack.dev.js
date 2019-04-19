@@ -27,5 +27,12 @@ module.exports = webpackMerge(commonConfig, {
   devServer: {
     historyApiFallback: true,
     stats: 'minimal'
-  }
+  },
+
+  //jQuery
+  resolve: {
+    alias: {
+         jquery: "jquery/src/jquery"
+    },
+  } 
 });

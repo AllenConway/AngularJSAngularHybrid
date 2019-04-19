@@ -79,6 +79,12 @@ module.exports = {
         //That would be tedious and error-prone. Webpack can inject those scripts and links for you with the HtmlWebpackPlugin
         new HtmlWebpackPlugin({
             template: 'index.html'
+        }),
+
+        //Legacy packages that require jQuery
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ]
 
