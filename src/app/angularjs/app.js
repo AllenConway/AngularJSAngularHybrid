@@ -11,7 +11,7 @@ class StatesProvider {
       this.$stateProvider = $stateProvider;
       this.$urlRouterProvider = $urlRouterProvider;
 
-      $urlRouterProvider.otherwise("/main/tab1");
+      $urlRouterProvider.otherwise("/main/tab1");      
 
       var main = {
          name: "main",
