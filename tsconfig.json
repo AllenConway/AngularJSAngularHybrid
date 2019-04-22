@@ -60,7 +60,7 @@
     "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
     "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
     "noStrictGenericChecks": true, /* Required for TS 2.4; will be fixed in RxJS6 */
-    "watch": true                             /* instruct compiler to watch all compiled files */
+    "watch": false                             /* instruct compiler to watch all compiled files */
   },
   "compileOnSave": true,
   "include": [

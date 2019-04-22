@@ -1,4 +1,4 @@
-/// <reference path="../../../node_modules/@angular/upgrade/static/src/common/angular1.d.ts" />
+/// <reference path="../../../node_modules/@angular/upgrade/static/src/angular1_providers.d.ts" />
 
 var app = angular.module("autoPerformanceApp");
 
