@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/AngularJSAngularHybrid",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -37,7 +38,7 @@
               "node_modules/bootstrap/dist/css/bootstrap-theme.css",
               "src/app/shared/site.css"
             ],
-            "scripts": [              
+            "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/angular/angular.js",
@@ -48,9 +49,8 @@
               "src/app/angularjs/models/HorsepowerCalculations.js",
               "src/app/angularjs/services/carService.js",
               "src/app/angularjs/controllers/engineHorsepower.js",
-              "src/app/angularjs/models/HorsepowerCalculations.js"              
-            ],
-            "es5BrowserSupport": true
+              "src/app/angularjs/models/HorsepowerCalculations.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -74,6 +74,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -106,7 +110,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/angular/angular.js",
+              "./src/app/angularjs/app.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
