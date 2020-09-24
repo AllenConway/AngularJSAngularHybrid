@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UpgradeModule } from '@angular/upgrade/static';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,16 +7,15 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    UpgradeModule
+    BrowserModule
   ],
   entryComponents: [AppComponent]
 })
 export class AppModule {
-  constructor(private upgrade: UpgradeModule) {
-  }
+
   ngDoBootstrap() {
+    // Now done in main.ts by downgradeModule() function
     // Hybrid bootstrap AngularJS root module
-    this.upgrade.bootstrap(document.body, ['autoPerformanceApp'], { strictDi: true });
+    // this.upgrade.bootstrap(document.body, ['autoPerformanceApp'], { strictDi: true });
   }
 }
