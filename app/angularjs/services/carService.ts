@@ -1,5 +1,3 @@
-/// <reference path="../../../node_modules/@angular/upgrade/static/src/angular1_providers.d.ts" />
-
 var app = angular.module("autoPerformanceApp");
 
 class carService {
