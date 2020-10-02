@@ -18,7 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         FormsModule,
         AppRoutingModule,
         //UpgradeModule,
-        NgbModule.forRoot()
+        NgbModule
     ],
     declarations: [
         AppComponent,
