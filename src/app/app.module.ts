@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { HorsepowerHighlightComponent } from './shared/directives/horsepower-highlight/horsepower-highlight.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HorsepowerHighlightComponent
   ],
   imports: [
     BrowserModule
