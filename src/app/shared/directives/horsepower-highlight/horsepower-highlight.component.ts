@@ -1,5 +1,5 @@
 declare var angular: angular.IAngularStatic;
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { downgradeComponent } from '@angular/upgrade/static';
 
 @Component({
@@ -9,7 +9,7 @@ import { downgradeComponent } from '@angular/upgrade/static';
 export class HorsepowerHighlightComponent {
 
   constructor(private el: ElementRef) {
-    this.el.nativeElement.style.backgroundColor = 'lightgreen';
+    this.el.nativeElement.style.backgroundColor = this.el.nativeElement.attributes[1].value;
   }
 
   // This method os only here for example's sake and should be placed more centrally for reuse (i.e. it's a utility method)
